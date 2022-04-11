@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import getArticleById from '../../apis/article/getArticleById';
+import getArticleById from '@/apis/article/getArticleById';
+import styles from './index.module.css';
 
 const Test = () => {
   useEffect(() => {
@@ -8,8 +9,9 @@ const Test = () => {
     });
   }, []);
   return (
-    <div>
-      <div>1111</div>
+    <div className={styles.content}>
+      <div className={styles.top}>2222</div>
+      <div className={styles.bottom}>3333</div>
     </div>
   );
 };
