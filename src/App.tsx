@@ -1,6 +1,6 @@
-import React from "react";
-import "./App.css";
-import { FileSyncOutlined } from "@/utils/icons";
+import React from 'react';
+import './App.css';
+import { FileSyncOutlined } from '@/utils/icons';
 
 function App() {
   return (
