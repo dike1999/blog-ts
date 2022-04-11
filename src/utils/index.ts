@@ -106,7 +106,7 @@ export const groupBy = (arr: Array<any>, f: (arg0: any) => any) => {
  * @returns
  */
 export function genertorColor(
-  list = [],
+  list: any = [],
   colorList = ['magenta', 'blue', 'red', 'volcano', 'orange', 'gold', 'lime', 'green', 'cyan', 'geekblue', 'purple']
 ) {
   const _list = [...list];
@@ -114,16 +114,4 @@ export function genertorColor(
     l.color = colorList[i] || colorList[randomIndex(colorList)];
   });
   return _list;
-}
-
-export function debounce(func: any, wait: number) {
-  let timer: NodeJS.Timeout | null = null;
-  return function (this: any, ...args: any) {
-    if (timer) {
-      clearTimeout(timer);
-    }
-    timer = setTimeout(() => {
-      func.apply(this, args);
-    }, wait);
-  };
 }

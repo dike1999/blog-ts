@@ -1839,6 +1839,11 @@
   resolved "https://registry.npmmirror.com/@types/json5/-/json5-0.0.29.tgz"
   integrity sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==
 
+"@types/lodash@^4.14.181":
+  version "4.14.181"
+  resolved "https://registry.npmmirror.com/@types/lodash/-/lodash-4.14.181.tgz"
+  integrity sha512-n3tyKthHJbkiWhDZs3DkhkCzt2MexYHXlX0td5iMplyfwketaOeKboEVBqzceH7juqvEg3q5oUoBFxSLu7zFag==
+
 "@types/marked@^4.0.3":
   version "4.0.3"
   resolved "https://registry.npmmirror.com/@types/marked/-/marked-4.0.3.tgz"
