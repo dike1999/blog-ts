@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import getArticleById from '@/apis/article/getArticleById';
 import { translateMarkdown } from '@/utils';
-import styles from './index.module.css';
+import styles from './index.module.less';
 
 const Test = () => {
   const [content, setContent] = useState('');

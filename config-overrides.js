@@ -1,4 +1,4 @@
-const { override, addWebpackAlias, addWebpackPlugin } = require('customize-cra');
+const { override, addWebpackAlias, addWebpackPlugin, addLessLoader, adjustStyleLoaders } = require('customize-cra');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dayjs = require('dayjs');
 const path = require('path');
@@ -14,6 +14,16 @@ const WebpackConfig = [
       filename: `index.${dayjs().format('YYYYMMDD.HHmmss')}.txt`,
     })
   ),
+  addLessLoader({
+    lessOptions: {
+      javascriptEnabled: true,
+      modifyVars: { '@primary-color': '#A80000' },
+    },
+  }),
+  adjustStyleLoaders(({ use: [, , postcss] }) => {
+    const postcssOptions = postcss.options;
+    postcss.options = { postcssOptions };
+  }),
 ];
 
 module.exports = {
