@@ -1,10 +1,21 @@
-const { override, addWebpackAlias, addWebpackPlugin, addLessLoader, adjustStyleLoaders } = require('customize-cra');
+const {
+  override,
+  addWebpackAlias,
+  addWebpackPlugin,
+  addLessLoader,
+  adjustStyleLoaders,
+  fixBabelImports,
+} = require('customize-cra');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const dayjs = require('dayjs');
 const path = require('path');
 const resolvePath = (dir) => path.join(__dirname, dir);
 
 const WebpackConfig = [
+  fixBabelImports('antd', {
+    libraryDirectory: 'es',
+    style: true,
+  }),
   addWebpackAlias({
     ['@']: resolvePath('src'),
   }),
@@ -17,7 +28,6 @@ const WebpackConfig = [
   addLessLoader({
     lessOptions: {
       javascriptEnabled: true,
-      modifyVars: { '@primary-color': '#1DA57A' },
     },
   }),
   adjustStyleLoaders(({ use: [, , postcss] }) => {
